@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    $base_url = 'http://localhost/locloth/';
+    $base_url = 'http://localhost/locloth-php-native/';
 
     require_once '../function/connection.php';
     require_once '../function/control.php';

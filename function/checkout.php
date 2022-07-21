@@ -1,17 +1,17 @@
 <?php
 
-function checkout($data){
-    $userId = htmlspecialchars($data['user_id']);
-    $produkId = htmlspecialchars($data['produk_id']);
-    $nama = htmlspecialchars($data['nama']);
-    $email = htmlspecialchars($data['email']);
-    $kota = htmlspecialchars($data['kota']);
-    $alamat = htmlspecialchars($data['alamat']);
-    $pengirimanId = htmlspecialchars($data['pengiriman_id']);
-    $keterangan = htmlspecialchars($data['keterangan']);
-    $total = htmlspecialchars($data['total']);
-    $jumlah = htmlspecialchars($data['jumlah']);
-
+function checkout($data) {
+    $userId = escape($data['user_id']);
+    $produkId = escape($data['produk_id']);
+    $nama = escape($data['nama']);
+    $email = escape($data['email']);
+    $kota = escape($data['kota']);
+    $alamat = escape($data['alamat']);
+    $pengirimanId = escape($data['pengiriman_id']);
+    $keterangan = escape($data['keterangan']);
+    $total = escape($data['total']);
+    $jumlah = escape($data['jumlah']);
+    
     $query = "INSERT INTO pembelian (user_id, produk_id, nama, email, kota, alamat, pengiriman_id, keterangan, total, jumlah) VALUES ('$userId', '$produkId', '$nama', '$email', '$kota', '$alamat', '$pengirimanId', '$keterangan', '$total', '$jumlah')";
     return run($query);
 }
